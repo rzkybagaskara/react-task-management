@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Shop with my Girlfriend",
+      "day": "26th January 2023",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Wash my bike",
+      "day": "31st January 2023",
+      "reminder": true
+    },
+    {
+      "text": "Buy a new Jamiroquai album",
+      "day": "10th February 2023",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "Learn React JS",
+      "day": "30th January 2023",
+      "reminder": true,
+      "id": 5
+    }
+  ]
+}
