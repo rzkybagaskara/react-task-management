@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Footer = () => {
+  const location = useLocation();
   return (
     <footer>
       <p>Copyright &copy; 2023</p>
-      <Link to="/about">About</Link>
+      {location.pathname === '/' && <Link to="/about">About</Link>}
     </footer>
   );
 };

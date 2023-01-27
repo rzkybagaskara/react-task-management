@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import About from './components/About';
 import { AddTask } from './components/AddTask';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 
@@ -81,24 +84,24 @@ function App() {
     setTasks(tasks.map((task) => (task.id === id ? { ...task, reminder: data.reminder } : task)));
   };
   return (
-    // <Router>
-    <div className="container">
-      <Header title="Task Management" onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
-      {/* <Routes>
+    <Router>
+      <div className="container">
+        <Header title="Task Management" onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+        <Routes>
           <Route
             path="/"
             element={
-              <> */}
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Task to show!'}
-      {/* </>
+              <>
+                {showAddTask && <AddTask onAdd={addTask} />}
+                {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Task to show!'}
+              </>
             }
           />
-          <Route path="/about" component={<About />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
-    </Router> */}
-    </div>
+      </div>
+    </Router>
   );
 }
 
